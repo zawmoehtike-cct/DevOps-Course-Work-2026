@@ -10,8 +10,9 @@ Django REST API for a book catalog — Dev Ops course work 2026.
 4. **SQLite database** migrated (`python manage.py migrate`)
 5. **API app** created with `python manage.py startapp api`
 6. **`rest_framework` and `api`** registered in `INSTALLED_APPS` in `settings.py`
-
-*Next: define models, serializers, views, and API endpoints.*
+7. **BookView** created in `api/views.py` — returns `{"hello": "django"}` at `GET /api/books/`
+8. **API URLs** wired — `api/urls.py` with `book_view` endpoint, included in root `urls.py`
+9. **Test suite** set up in `api/tests/test_views.py` using DRF's `APITestCase`
 
 ## Setup
 
@@ -40,8 +41,11 @@ python manage.py runserver
 │   ├── apps.py               # App configuration (auto-generated)
 │   ├── models.py             # Define database tables as Python classes
 │   ├── views.py              # Handle HTTP requests and return responses
-│   ├── tests.py              # Unit tests for the app
+│   ├── tests/                # Unit tests
+│   │   ├── __init__.py
+│   │   └── test_views.py     # Tests for views (BookView)
 │   ├── serializers.py        # (to create) DRF serializers — convert model data to/from JSON
+│   └── urls.py               # API app URL routing
 │   └── migrations/           # Auto-generated DB schema change history
 ├── manage.py                 # Django's CLI tool — runserver, migrate, startapp, etc.
 ├── db.sqlite3                # SQLite database file (auto-created, not committed)
