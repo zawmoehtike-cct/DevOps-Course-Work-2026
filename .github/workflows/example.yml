@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  example:
+  check-migrations:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -24,6 +24,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run tests
-      # run api.test.test_views
-      run: python -m pytest
+    - name: Run django migrations
+      run: |
+        python manage.py makemigrations --check
