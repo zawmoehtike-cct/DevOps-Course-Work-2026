@@ -8,4 +8,4 @@ class BookViewTest(APITestCase):
         url = reverse('api:books')
         response = self.client.get(url, format='json')
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == {"hello": "djangoo"}
+        assert response.data == {"hello": "django"}
