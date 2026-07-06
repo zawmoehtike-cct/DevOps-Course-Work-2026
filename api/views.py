@@ -11,6 +11,7 @@ class BookView(APIView):
         return Response({"books": serializer.data}, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
+        print("request.data:", request.data)
         serializer = BookSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
