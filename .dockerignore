@@ -1,0 +1,14 @@
+.git
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+.vscode
+.venv
+
+db.sqlite3
+
+
+
