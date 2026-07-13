@@ -39,7 +39,7 @@ jobs:
     needs:
       - run-migrations
       - check-migrations
-    if: github.ref == 'refs/head/main'
+    # if: github.ref == 'refs/head/main'
     permissions:
       contents: read
       packages: write
