@@ -37,8 +37,8 @@ jobs:
   build-docker-image:
     runs-on: ubuntu-latest
     needs:
-      - runmigrations
-      - checkmigrations
+      - run-migrations
+      - check-migrations
     if: github.ref == 'refs/head/main'
     permissions:
       contents: read
